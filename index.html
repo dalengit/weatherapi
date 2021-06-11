@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,26 +19,28 @@
             <div class="input">
                 <form id="form">
                     <input class="user-input" type="text" placeholder="Location" required>
-                    <!-- <input id="add" type="submit" value="submit" hidden> -->
                 </form>
             </div>
         </section>
         <section class="weather-data">
             <div class="info-container">
-                <div class="main-data">
+                <div class="place">
                     <h1 class="name"></h1>
-                    <p class="country"></p>
-                    <p class="weather-condition"></p>
-                    <p class="weather-description"></p>
-                    <p class="temperature"></p>
-                    <p class="min"></p>
-                    <p class="max"></p>
+                    <h1 class="country"></h1>
                 </div>
-                <div class="other-data">
-                    <p class="wind-speed"></p>
-                    <p class="sunrise"></p>
-                    <p class="sunset"></p>
-                    <p class="timezone"></p>
+                <div class="other-info">
+                    <div class="weather">
+                        <p class="weather-id"></p>
+                        <p class="weather-description"></p>
+                    </div>
+                    <div class="one">
+                        <p class="temperature"></p>
+                        <p class="min"></p>
+                    </div>
+                    <div class="two">
+                        <p class="max"></p>
+                        <p class="wind-speed"></p>
+                    </div>
                 </div>
             </div>
         </section>

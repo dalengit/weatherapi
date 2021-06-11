@@ -4,7 +4,7 @@ var userInput = document.querySelector('.user-input');
 
 var cname = document.querySelector('.name');
 var country = document.querySelector('.country');
-var weatherCon = document.querySelector('.weather-condition');
+var weatherid = document.querySelector('.weather-id');
 var weatherDes = document.querySelector('.weather-description');
 var temperature = document.querySelector('.temperature');
 var min = document.querySelector('.min');
@@ -21,9 +21,13 @@ form.addEventListener('submit', fetchData);
 // API Key
 apik = 'eab55233968fcfc4a028e68bbb6f02b2'
 
-// Kelvin converter 
+// Measurements converters 
 function conversion(val) {
-    return (val - 273).toFixed(2);
+    return (val - 273).toFixed(0);
+}
+
+function speedConverter(val) {
+    return (val *  2.236936).toFixed(0);
 }
 
 // API fetch 
@@ -38,24 +42,26 @@ function fetchData (e){
         var temp = data.main.temp;
         var tempMin = data.main.temp_min;
         var tempMax = data.main.temp_max;
-        var weatherId = data.weather.main;
-        var weatherDescription = data.weather.description; 
+        var weatherId = data.weather[0].main;
+        var weatherDescription = data.weather[0].description; 
 
         // Other Data 
         var windSpeed = data.wind.speed;
-        var sunrise = data.sys.sunrise; 
-        var sunset = data.sys.sunset; 
-        var timeZone = data.timezone; 
 
         // Print 
-        cname.innerHTML = `${cityName}`;
-
-        console.log('succ');
+        cname.innerHTML = `${cityName},`;
+        country.innerHTML = `${countryName}`;
+        weatherid.innerHTML = `Current: ${weatherId}`;
+        weatherDes.innerHTML = `Description: ${weatherDescription}`;
+        temperature.innerHTML = `Temp: ${ conversion(temp) } °C`;
+        min.innerHTML = `Low: &#x2193; ${ conversion(tempMin) } °C`;
+        max.innerHTML = `High: &#x2191; ${ conversion(tempMax) } °C`;
+        wind.innerHTML = `Wind speed: ${ speedConverter(windSpeed) } mph`;
     }) 
     
     .catch(error => {
         alert('Please type in a valid city')
       });
-
+      
     e.preventDefault();
 }
