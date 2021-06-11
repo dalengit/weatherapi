@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather.io</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">
+            <h1>Weather.io</h1>
+        </div>
+        <section class="input-section">
+            <div class="input">
+                <form id="form">
+                    <input class="user-input" type="text" placeholder="Location">
+                    <!-- <input id="add" type="submit" value="submit" hidden> -->
+                </form>
+            </div>
+        </section>
+
+        <section class="weather-data">
+            <div class="info-container">
+                <div class="main-data">
+                    <h1 class="city"></h1>
+                    <p class="min"></p>
+                    <p class="max"></p>
+                    <p class="temperature"></p>
+                </div>
+                <div class="other-data"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
