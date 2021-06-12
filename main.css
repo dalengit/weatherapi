@@ -39,8 +39,19 @@ input:focus {
     outline: none;
 }
 
+.info-container {
+    background-color: rgb(249, 232, 232);
+    padding: 2em;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+}
+
 .weather-data {
     padding: 3em;
+    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .place {
@@ -49,6 +60,7 @@ input:focus {
     flex-direction: row;
     align-items: baseline;
 }
+
 .name {
     font-size: 2.5em;
     margin: 0 .2em 0 0;
