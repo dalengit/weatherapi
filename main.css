@@ -3,7 +3,7 @@ html {
     background-repeat: no-repeat;
     background-position: center;
     height: 20%;
-    margin: 3em;
+    margin: 1em;
 }
 
 body {
@@ -16,6 +16,11 @@ body {
 .title {
     color: white;
     font-size: 2em;
+}
+
+.title-body {
+    font-size: .8em;
+    margin: 0 0 1em 0;
 }
 
 .user-input {
@@ -40,25 +45,33 @@ input:focus {
 }
 
 .info-container {
-    background-color: rgb(249, 232, 232);
+    border: 1px solid rgb(249, 232, 232);
     padding: 2em;
     border-radius: 5px;
-    color: black;
+    color: white;
     text-align: center;
+    display: none;
 }
 
 .weather-data {
     padding: 3em;
-    width: 350px;
+    width: 450px;
     margin-right: auto;
     margin-left: auto;
 }
 
 .place {
     display: flex;
+    flex-direction: column;
+    margin-right: 3em;
+}
+
+.country-info {
+    display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: baseline;
+    width: 100%;
 }
 
 .name {
@@ -67,9 +80,33 @@ input:focus {
 }
 
 .country {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.main-info {
+    display: flex;
+}
+
+.temp-info {
+    text-align: center;
+    width: 50%;
+}
+
+.temperature {
     font-size: 2em;
 }
 
 p {
     font-size: 1.2em;
 }
+
+.other {
+    width: 50%;
+}
+
+.other p {
+    /* margin: .4em; */
+}
+
+

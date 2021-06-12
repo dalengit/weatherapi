@@ -1,6 +1,7 @@
 // Variables 
 var form = document.getElementById('form');
 var userInput = document.querySelector('.user-input');
+var container = document.querySelector('.info-container');
 
 var cname = document.querySelector('.name');
 var country = document.querySelector('.country');
@@ -11,15 +12,19 @@ var min = document.querySelector('.min');
 var max = document.querySelector('.max');
 
 var wind = document.querySelector('.wind-speed');
-var rise = document.querySelector('.sunrise');
-var set = document.querySelector('.sunset');
-var timezone = document.querySelector('.timezone');
 
 // Event Listeners 
 form.addEventListener('submit', fetchData);
 
 // API Key
 apik = 'eab55233968fcfc4a028e68bbb6f02b2'
+
+// Unhide div function 
+function unhide (){
+    console.log('hi');
+    container.style.transition = 'ease-in 1s 1s ';
+    container.style.display = "block";
+}
 
 // Measurements converters 
 function conversion(val) {
@@ -49,14 +54,16 @@ function fetchData (e){
         var windSpeed = data.wind.speed;
 
         // Print 
-        cname.innerHTML = `${cityName},`;
+        cname.innerHTML = `${cityName}`;
         country.innerHTML = `${countryName}`;
-        weatherid.innerHTML = `Current: ${weatherId}`;
-        weatherDes.innerHTML = `Description: ${weatherDescription}`;
-        temperature.innerHTML = `Temp: ${ conversion(temp) } °C`;
-        min.innerHTML = `Low: &#x2193; ${ conversion(tempMin) } °C`;
-        max.innerHTML = `High: &#x2191; ${ conversion(tempMax) } °C`;
-        wind.innerHTML = `Wind speed: ${ speedConverter(windSpeed) } mph`;
+        weatherid.innerHTML = `${weatherId}`;
+        weatherDes.innerHTML = `${weatherDescription}`;
+        temperature.innerHTML = `${ conversion(temp) } °C`;
+        min.innerHTML = `&#x2193;  ${ conversion(tempMin) } °C`;
+        max.innerHTML = `&#x2191;  ${ conversion(tempMax) } °C`;
+        wind.innerHTML = `Wind: ${ speedConverter(windSpeed) } mph`;
+
+        unhide();
     }) 
     
     .catch(error => {
