@@ -10,6 +10,7 @@ var weatherDes = document.querySelector('.weather-description');
 var temperature = document.querySelector('.temperature');
 var min = document.querySelector('.min');
 var max = document.querySelector('.max');
+var image = document.querySelector('.image');
 
 var wind = document.querySelector('.wind-speed');
 
@@ -48,7 +49,9 @@ function fetchData (e){
         var tempMin = data.main.temp_min;
         var tempMax = data.main.temp_max;
         var weatherId = data.weather[0].main;
-        var weatherDescription = data.weather[0].description; 
+        var weatherDescription = data.weather[0].description;
+        var wImage = data.weather[0].icon; 
+        
 
         // Other Data 
         var windSpeed = data.wind.speed;
@@ -62,6 +65,7 @@ function fetchData (e){
         min.innerHTML = `&#x2193;  ${ conversion(tempMin) } °C`;
         max.innerHTML = `&#x2191;  ${ conversion(tempMax) } °C`;
         wind.innerHTML = `Wind: ${ speedConverter(windSpeed) } mph`;
+        image.src = `https://openweathermap.org/img/wn/${wImage}.png`;
 
         unhide();
     }) 
