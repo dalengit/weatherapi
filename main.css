@@ -1,5 +1,5 @@
 html {
-    background-image: url(./images/bg2.jpg);
+    background-image: url(./images/bg3.jpg);
     background-repeat: no-repeat;
     background-position: center;
     height: 20%;
@@ -102,7 +102,7 @@ input:focus {
 
 .image {
     margin: 0;
-    background-color: grey;
+    background-color: rgb(100, 169, 242);
     border-radius: 5px;
     width: 60px;
 }
